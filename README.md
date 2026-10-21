@@ -3,6 +3,6 @@
 Интерактивная шкала времени: все, кто назван в Библии по имени, и главные фигуры христианства до наших дней.
 Режимы: таймлайн, карта, парадоксы времени, родословие. Русский и английский.
 
-Сайт: https://galagaev.github.io/bible-timeline.github.io/
+Сайт: https://galagaev.github.io/bible-timeline/
 
 Автор: [@galagaev](https://t.me/galagaev)
