@@ -1,2 +1,8 @@
-# bible-timeline.github.io
-3,548 people: everyone named in the Bible, and key figures of Christianity to the present day
+# Библейский таймлайн
+
+Интерактивная шкала времени: все, кто назван в Библии по имени, и главные фигуры христианства до наших дней.
+Режимы: таймлайн, карта, парадоксы времени, родословие. Русский и английский.
+
+Сайт: https://galagaev.github.io/bible-timeline.github.io/
+
+Автор: [@galagaev](https://t.me/galagaev)
