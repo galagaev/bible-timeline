@@ -790,11 +790,11 @@ function select(i,opts={}){if(PHL||(LHL&&!LHL.has(i))){PHL=null;LHL=null;layout(
 
 // ---------- карточка
 const drawer=document.getElementById('drawer'),dbody=document.getElementById('dbody');
-function closeSel(){drawer.hidden=true;sel=null;document.querySelectorAll('.pb.sel').forEach(g=>g.classList.remove('sel'));markSel();if(mode==='map')updateMap();updSelChip()}
+function closeSel(){drawer.hidden=true;if(mwState)mwState.open=false;sel=null;document.querySelectorAll('.pb.sel').forEach(g=>g.classList.remove('sel'));markSel();if(mode==='map')updateMap();updSelChip()}
 document.getElementById('dclose').onclick=closeSel;
 // карточку можно свернуть в плашку: выбор (путь на карте, линии родства) остаётся; на телефонах и планшетах «Показать на карте/шкале» сворачивают её сами
 const mobQ=matchMedia('(max-width:1180px),(pointer:coarse)');// телефоны и планшеты
-function minDrawer(){drawer.hidden=true;updSelChip()}
+function minDrawer(){drawer.hidden=true;if(mwState)mwState.open=false;updSelChip()}
 function updSelChip(){const c=document.getElementById('selchip'),on=sel!=null&&drawer.hidden&&mode!=='para';c.hidden=!on;if(!on)return;
   document.getElementById('seltxt').textContent=N(P[sel]);document.getElementById('seldot').style.background=gcol(P[sel].g)}
 document.getElementById('dmin').onclick=()=>sel!=null?minDrawer():closeSel();
@@ -1238,7 +1238,7 @@ matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change',themeUpd)
 function setLang(l){LANG=l;try{localStorage.setItem('pc-lang',l)}catch(_){}regroup();applyStatic();document.getElementById('sub').textContent=subText();
   drawGroups();layout();const pop=document.getElementById('infoPop');if(!pop.hidden)pop.innerHTML=infoHTML();
   if(sel!=null&&!drawer.hidden)openDrawer(P[sel]);if(q.value&&sel!=null)q.value=N(P[sel]);
-  drawViews();if(mode==='para')drawPara();if(mode==='tree')drawTree();if(mwState&&mwState.open)openMW(mwState.y,mwState.w);
+  drawViews();if(mode==='para')drawPara();if(mode==='tree')drawTree();if(mwState&&mwState.open&&!drawer.hidden)openMW(mwState.y,mwState.w);// «Тем временем» перерисовываем, только если оно сейчас открыто
   if(mapInit){polKey=null;drawPol();updateMap()}}
 document.getElementById('langBtn').onclick=()=>setLang(EN()?'ru':'en');
 // ---------- масштаб шкалы
