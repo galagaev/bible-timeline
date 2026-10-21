@@ -1,10 +1,10 @@
 # Bible Timeline
 
-**3,548 people and 778 events, from Adam to the present day: everyone named in the Bible, and key figures of Christianity.**
+**3,548 people and 777 events, from Adam to the present day: everyone named in the Bible, and key figures of Christianity.**
 
 An interactive Bible timeline: prophets, kings of Israel and Judah, apostles, judges, women of the Bible, genealogies from Adam to Jesus, maps of journeys and empires, church history and world rulers — all on one time scale.
 
-**Website:** https://galagaev.github.io/bible-timeline/  ·  Русская версия: https://galagaev.github.io/bible-timeline-rus/
+**Website:** https://galagaev.github.io/bible-timeline/
 
 ![Bible Timeline](og.png)
 
@@ -18,5 +18,3 @@ An interactive Bible timeline: prophets, kings of Israel and Judah, apostles, ju
 
 ## Sources
 Theographic Bible Metadata (CC BY-SA 4.0), BibleHub, Easton's Bible Dictionary (public domain), Cliopatria / Seshat (CC BY 4.0), Natural Earth.
-
-Author: [@galagaev](https://t.me/galagaev)
