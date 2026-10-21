@@ -5,4 +5,3 @@
 
 Сайт: https://galagaev.github.io/bible-timeline/
 
-Автор: [@galagaev](https://t.me/galagaev)
