@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Библейский таймлайн</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%231d2230' stroke-width='1.6' stroke-linecap='round'><style>%40media (prefers-color-scheme:dark){svg{stroke:%23e8e6e1}}</style><path d='M1 2.5h6M4 6h7M2.5 9.5h5'/></svg>">
-<meta name="description" content="Все, кто назван в Библии по имени, и главные фигуры христианства до наших дней: шкала времени, карта, парадоксы, родословия.">
+<meta name="description" content="3 548 человек и 778 событий от Адама до наших дней: все, кто назван в Библии, и главные фигуры христианства. Шкала времени, карта, парадоксы, родословия.">
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Roboto+Condensed:wght@700;800&family=Roboto:wght@400&family=Alegreya:ital,wght@0,400;0,500;1,400&family=Alegreya+Sans:wght@400;500;700&display=swap">
@@ -493,7 +493,7 @@ function featGeom(f){if(!f._g){if(Array.isArray(f[2])){const Q=POL.Q;f._g={type:
 const P=DATA.P, PL=DATA.PL;
 // ---------- язык интерфейса
 const L10N={
-ru:{title:'Библейский таймлайн',sub:n=>`${n} человек: все, кто назван в Библии по имени, и главные фигуры христианства до наших дней`,
+ru:{title:'Библейский таймлайн',sub:(n,m,k)=>`${n} человек и ${m} ${[2,3,4].includes(k%10)&&![12,13,14].includes(k%100)?'события':k%10===1&&k%100!==11?'событие':'событий'} от Адама до наших дней: все, кто назван в Библии, и главные фигуры христианства`,
  byGen:'примерно, по родословию',hlClear:'Сбросить',dMin:'Свернуть карточку',selOpen:'Открыть карточку',tFold:'Свернуть ветку (Shift — со всеми внутренними)',tUnfold:'Развернуть ветку (Shift — целиком)',tAround:'Вокруг человека',tLine:'Линия',tCenter:'В центре',tByTribe:'Колена',tByGroup:'Группы',tShowTl:'Показать на шкале',tSpouse:'супруг(а)',tMother:'мать',tApprox:'годы примерно',tNoTribe:'колено неизвестно',family:'Родословие',
  mode:'Режим',timeline:'Таймлайн',map:'Карта',para:'Парадоксы времени',tree:'Родословие',randomP:'Случайный парадокс',paraIntro:'Сравнения отрезков времени. Числа посчитаны по датам этой шкалы.',treeSoon:'Родословие появится здесь: древо выбранного человека — предки, потомки, братья и сёстры, раскрашенные по коленам.',mw:'Тем временем',mwW0:'этот год',mwW:n=>`±${n} лет`,mwNone:'В эти годы во включённых группах ничего нет.',mwBack:'← Тем временем',prevY:'Раньше',nextY:'Позже',nYrs:n=>{const a=Math.abs(n)%100,b=a%10;return n+' '+(a>10&&a<20?'лет':b===1?'год':b>=2&&b<=4?'года':'лет')},groups:'Группы',certs:'Точность дат',groupsN:(n,m)=>`Группы: ${n} из ${m}`,certsAll:'Точность дат: все',certsN:c=>`Точность дат: ${c} из 3`,datesShort:'Даты',
  searchPh:'Найти человека: Иеремия, Руфь, Павел…',searchAria:'Поиск по именам',search:'Поиск',noMatch:'Никого не нашлось',undated:'без даты',
@@ -513,7 +513,7 @@ ru:{title:'Библейский таймлайн',sub:n=>`${n} человек: �
  src:'Люди, места и даты упоминаний: <a href="https://github.com/robertrouse/theographic-bible-metadata" target="_blank" rel="noopener">Theographic Bible Metadata</a> (CC BY-SA 4.0), даты переведены с хронологии Ашшера на хронологию царей по Тиле (Исход ок. 1446 г. до н. э.). Фигуры истории церкви, мировые правители, современники и события собраны вручную; годы приблизительны. Карта: Natural Earth. Границы государств: <a href="https://github.com/Seshat-Global-History-Databank/cliopatria" target="_blank" rel="noopener">Cliopatria</a> (Seshat Global History Databank, CC BY 4.0; упрощены), для Ближнего Востока 1550–333 до н. э. — вручную; все границы приблизительны. Текст Библии: Синодальный перевод и King James Version (общественное достояние, по сборке scrollmapper/bible_databases). Английские описания малоизвестных людей — словарь Истона (1897). События с участниками — Theographic. «Хроника Библии» — даты и события таймлайна <a href="https://biblehub.com/timeline/" target="_blank" rel="noopener">BibleHub</a>.',
  yrs:n=>n%10===1&&n%100!==11?'год':[2,3,4].includes(n%10)&&![12,13,14].includes(n%100)?'года':'лет',
  bc:'до н. э.',ad:'н. э.',tick10bc:'10 до н. э.',tick10ad:'10 н. э.'},
-en:{title:'Bible Timeline',sub:n=>`${n} people: everyone named in the Bible, and key figures of Christianity to the present day`,
+en:{title:'Bible Timeline',sub:(n,m)=>`${n} people and ${m} events, from Adam to the present day: everyone named in the Bible, and key figures of Christianity`,
  byGen:'approximate, from the genealogy',hlClear:'Clear',dMin:'Minimise card',selOpen:'Open card',tFold:'Collapse branch (Shift — all levels)',tUnfold:'Expand branch (Shift — all levels)',tAround:'Around a person',tLine:'Line',tCenter:'Centre',tByTribe:'Tribes',tByGroup:'Groups',tShowTl:'Show on timeline',tSpouse:'spouse',tMother:'mother',tApprox:'approximate years',tNoTribe:'tribe unknown',family:'Family tree',
  mode:'Mode',timeline:'Timeline',map:'Map',para:'Paradoxes of time',tree:'Family tree',randomP:'Random paradox',paraIntro:'Comparisons of spans of time. The numbers come from this timeline’s dates.',treeSoon:'The family tree will appear here: ancestors, descendants and siblings of the selected person, coloured by tribe.',mw:'Meanwhile',mwW0:'this year',mwW:n=>`±${n} years`,mwNone:'Nothing in the enabled groups for these years.',mwBack:'← Meanwhile',prevY:'Earlier',nextY:'Later',nYrs:n=>n+(Math.abs(n)===1?' year':' years'),groups:'Groups',certs:'Date certainty',groupsN:(n,m)=>`Groups: ${n} of ${m}`,certsAll:'Date certainty: all',certsN:c=>`Date certainty: ${c} of 3`,datesShort:'Dates',
  searchPh:'Find a person: Jeremiah, Ruth, Paul…',searchAria:'Search by name',search:'Search',noMatch:'No matches',undated:'undated',
@@ -540,6 +540,8 @@ const EN=()=>LANG==='en';
 // группы-события: на карте — квадраты
 const EVG=g=>g==='events'||g==='bh'||g.startsWith('t_');
 const NPEOPLE=()=>P.filter(p=>!EVG(p.g)&&!['books','books_ev','tev','denoms','states'].includes(p.g)).length;
+const NEVENTS=()=>P.filter(p=>EVG(p.g)&&p.s!=null).length;// события на шкале: ключевые, хроника Библии, тематические
+const subText=()=>{const f=x=>x.toLocaleString(EN()?'en':'ru'),m=NEVENTS();return T('sub')(f(NPEOPLE()),f(m),m)};
 const N=p=>EN()?(p.ne||p.en||p.n):p.n;              // имя человека на текущем языке
 const C=p=>EN()?(p.ce||null):p.c;                    // карточка на текущем языке
 const PLN=pi=>EN()?(PL[pi][3]||PL[pi][0]):PL[pi][0];  // название места по умолчанию
@@ -1220,7 +1222,7 @@ function openMW(y,w){y=Math.round(y);mwState={y,w,open:true};const lo=y+w,hi=y-w
 // ---------- окно «i»: описание, легенда, источники, автор
 function infoHTML(){const L=T('lg');const sw=(st)=>`<i style="${st}"></i>`;
   const items=[[`width:18px;height:8px;border-radius:2px;background:var(--c-prophets)`,L[0]],[`width:18px;height:4px;border-radius:2px;background:var(--c-prophets);opacity:.4`,L[1]],[`width:18px;height:8px;border-radius:2px;background:var(--c-prophets);opacity:.55`,L[2]],[`width:18px;height:8px;border-radius:2px;background:var(--c-women)`,L[3]],[`width:18px;height:8px;border-radius:2px;background:color-mix(in srgb,var(--c-prophets) 15%,transparent);border:1.5px dashed var(--c-prophets);box-sizing:border-box`,L[4]],[`width:18px;height:8px;border-radius:2px;background:repeating-linear-gradient(45deg,var(--c-kings_jud) 0 3px,var(--surface) 3px 5px)`,L[5]],[`width:0;height:12px;border-left:1.5px dashed var(--gold)`,L[6]]];
-  return `<div class="ip1">${esc(T('sub')(NPEOPLE().toLocaleString(EN()?'en':'ru')))}</div><div class="author">${T('author')} <a href="https://t.me/galagaev" target="_blank" rel="noopener">@galagaev</a></div><h6>${T('legendH')}</h6><div class="legend">${items.map(([s,l])=>`<span>${sw(s)}${esc(l)}</span>`).join('')}</div><h6>${T('srcH')}</h6><div class="src">${T('src')}</div>`;}
+  return `<div class="ip1">${esc(subText())}</div><div class="author">${T('author')} <a href="https://t.me/galagaev" target="_blank" rel="noopener">@galagaev</a></div><h6>${T('legendH')}</h6><div class="legend">${items.map(([s,l])=>`<span>${sw(s)}${esc(l)}</span>`).join('')}</div><h6>${T('srcH')}</h6><div class="src">${T('src')}</div>`;}
 {const b=document.getElementById('infoBtn'),pop=document.getElementById('infoPop');
  b.onclick=e=>{e.stopPropagation();if(pop.hidden){pop.innerHTML=infoHTML();pop.hidden=false;b.setAttribute('aria-expanded','true')}else{pop.hidden=true;b.setAttribute('aria-expanded','false')}};
  document.addEventListener('click',e=>{if(!pop.hidden&&!pop.contains(e.target)&&!e.target.closest('#infoBtn')){pop.hidden=true;b.setAttribute('aria-expanded','false')}});}
@@ -1233,7 +1235,7 @@ try{const th=localStorage.getItem('pc-theme');if(th==='dark'||th==='light')docum
 document.getElementById('themeBtn').onclick=()=>{const n=isDark()?'light':'dark';document.documentElement.dataset.theme=n;try{localStorage.setItem('pc-theme',n)}catch(_){}themeUpd()};
 matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change',themeUpd);
 // ---------- язык
-function setLang(l){LANG=l;try{localStorage.setItem('pc-lang',l)}catch(_){}regroup();applyStatic();document.getElementById('sub').textContent=T('sub')(NPEOPLE().toLocaleString(EN()?'en':'ru'));
+function setLang(l){LANG=l;try{localStorage.setItem('pc-lang',l)}catch(_){}regroup();applyStatic();document.getElementById('sub').textContent=subText();
   drawGroups();layout();const pop=document.getElementById('infoPop');if(!pop.hidden)pop.innerHTML=infoHTML();
   if(sel!=null&&!drawer.hidden)openDrawer(P[sel]);if(q.value&&sel!=null)q.value=N(P[sel]);
   drawViews();if(mode==='para')drawPara();if(mode==='tree')drawTree();if(mwState&&mwState.open)openMW(mwState.y,mwState.w);
@@ -1295,7 +1297,7 @@ document.getElementById('bibleBtn').onclick=()=>{let s={bk:'GEN',c:1};try{s=JSON
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!reader.hidden)reader.hidden=true});
 // ---------- старт
 applyStatic();
-document.getElementById('sub').textContent=T('sub')(NPEOPLE().toLocaleString(EN()?'en':'ru'));
+document.getElementById('sub').textContent=subText();
 drawGroups();app.dataset.mode=mode;drawViews();if(mode==='para')drawPara();if(mode==='tree')drawTree();
 setOff();layout();
 requestAnimationFrame(()=>{gbody.scrollLeft=X(880)-gbody.clientWidth/2;VIEW=viewNow();layout();syncScroll();if(mode==='map'){initMap();sizeMap();updateMap()}});
